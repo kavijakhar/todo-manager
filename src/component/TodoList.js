@@ -115,7 +115,15 @@ const TodoList = ({ setEditingTodo, activeTab }) => {
                             </div>
                             <div className="action-buttons">
                                 {/* Complete Task Button */}
-                                <div className="button" onClick={() => {dispatch(completeTodo(todo.id));toast.success("Todo marked as completed successfully!")}}>
+                                <div className="button" onClick={() => {
+                                    if (!todo.completed) {
+                                        dispatch(completeTodo(todo.id));
+                                        toast.success("Todo marked as completed successfully!");
+                                    } else {
+                                        dispatch(completeTodo(todo.id));
+                                        toast.info("Todo marked as incomplete.");
+                                    }
+                                }}>
                                     {todo.completed ? <FaCircleCheck color='green' size={20} /> : <FaRegCheckCircle size={20} />}
                                 </div>
 
