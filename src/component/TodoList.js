@@ -94,7 +94,7 @@ const TodoList = ({ setEditingTodo, activeTab }) => {
 
             {displayTodos.length === 0 ? (
                 <p style={{ textAlign: 'center', color: 'gray', fontSize: '16px' }}>
-                    No todos found in this category. Please add some tasks to get started!
+                    No Tasks found in this category. Please add some tasks to get started!
                 </p>
             ) : (
                 <ul>
