@@ -28,7 +28,7 @@ const TodoForm = ({ editingTodo, setEditingTodo, activeTab }) => {
 
     const handleSubmit = useCallback((e) => {
         e.preventDefault();
-        
+
         const existingTodo = todos.find(todo =>
             todo.timeSlot === timeSlot &&
             todo.id !== (editingTodo ? editingTodo.id : null)
@@ -48,7 +48,7 @@ const TodoForm = ({ editingTodo, setEditingTodo, activeTab }) => {
             } else {
                 // Dispatch addTodo action
                 dispatch(addTodo({ title, date, timeSlot, type }));
-                toast.success('Todo added successfully!'); 
+                toast.success('Todo added successfully!');
             }
 
             // Reset form fields after submission
@@ -56,10 +56,10 @@ const TodoForm = ({ editingTodo, setEditingTodo, activeTab }) => {
             setDate('');
             setTimeSlot('');
             setType('weekly');
-            
+
             // Update local storage to include the new todo
             const updatedTodos = JSON.parse(localStorage.getItem('todos')) || [];
-            setTodos(updatedTodos); 
+            setTodos(updatedTodos);
         }
     }, [dispatch, title, date, timeSlot, type, editingTodo, setEditingTodo, todos]);
 
@@ -90,6 +90,7 @@ const TodoForm = ({ editingTodo, setEditingTodo, activeTab }) => {
                 <label>Time Slot:</label>
                 <input
                     type="text"
+                    disabled={editingTodo}
                     value={timeSlot}
                     onChange={(e) => setTimeSlot(e.target.value)}
                     placeholder="e.g., 9:00 AM - 10:00 AM"
@@ -101,6 +102,8 @@ const TodoForm = ({ editingTodo, setEditingTodo, activeTab }) => {
                 <label>Type:</label>
                 <select
                     value={type}
+                    
+                    disabled={editingTodo}
                     onChange={(e) => setType(e.target.value)}
                 >
                     <option value="weekly">Weekly</option>

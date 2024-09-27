@@ -22,17 +22,16 @@ const Todos = () => {
                     </li>
                 </ul>
             </div>
-
             <div className="main-content">
                 <h2 className="todo-heading">Manage Tasks</h2>
                 <div className="container">
-                    {(activeTab === 'all' || activeTab === 'completed') && (
+                    {(activeTab === 'all' || (activeTab === 'completed' && editingTodo)) && (
                         <TodoForm editingTodo={editingTodo} setEditingTodo={setEditingTodo} activeTab={activeTab} />
                     )}
-
                     <TodoList setEditingTodo={setEditingTodo} activeTab={activeTab} />
                 </div>
             </div>
+
         </div>
     );
 };
