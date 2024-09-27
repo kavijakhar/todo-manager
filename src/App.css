@@ -1,38 +1,165 @@
-.App {
+/* General styling for the app */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
   text-align: center;
+  color: #333;
+  margin-top: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Container for form and todo list */
+.container {
+  margin: 30px 0px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Flex form layout */
+form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-end;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+form div {
+  margin: 0px 20px;
+}
+
+input,
+select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+button {
+  padding: 10px;
+  background-color: #007bff;
   color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Todo list styles */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+li strong {
+  color: #333;
+}
+
+li span {
+  display: block;
+  color: #777;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.todo-heading {
+  text-align: center;
+  color: #007bff;
+  font-size: 24px;
+}
+
+.todo-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.action-button {
+  margin-right: 10px;
+  color: black;
+  border: 2px solid gray;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.action-button:hover {
+  background-color: #f0f0f0;
+}
+
+.icon {
+  padding: 0px 4px;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  margin-right: 10px;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #cbcbcb;
+  border-radius: 50%;
+}
+
+/* Todos specific styles */
+.todos-container {
+    display: flex;
+}
+
+.sidebar {
+    width: 200px;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+}
+
+.task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-item {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.main-content {
+    padding: 20px;
+    flex: 1;
 }
